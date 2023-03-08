@@ -1,6 +1,6 @@
-
 let output = '0';
-const outputElement = document.querySelector('#output');
+const calculationElement = document.querySelector('#calculation');
+const answerElement = document.querySelector('#answer');
 
 function addToOutput(value) {
     if (output === '0') {
@@ -8,20 +8,24 @@ function addToOutput(value) {
     } else {
         output += value;
     }
-    outputElement.textContent = output;
+    calculationElement.textContent = output;
 }
 
 function clearOutput() {
     output = '0';
-    outputElement.textContent = output;
+    calculationElement.textContent = output;
+    answerElement.textContent = '';
 }
+
 function calculate() {
-    const expression = outputElement.textContent;
+    const expression = calculationElement.textContent;
     const result = eval(expression);
 
     if (result === Infinity || result === -Infinity) {
-        outputElement.textContent = 'Error';
+        answerElement.textContent = 'Error';
     } else {
-        outputElement.textContent = result;
+        answerElement.textContent = `= ${result}`;
     }
+    output = '0';
 }
+

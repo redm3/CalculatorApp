@@ -8,24 +8,21 @@
 
 }
 
+
 .screen {
     background-color: #000;
     color: #fff;
     /* border: 1px solid #ccc; */
     border-radius: 5px;
+    font-size: 20px;
     padding: 5px;
-    margin-bottom: 150px;
-    text-align: left;
+    margin-bottom: 75px;
+    text-align: right;
+    height: 80px; /* Added fixed height */
+    overflow: auto; /* Added overflow property */
+    margin-top: 50px;
+    
 }
-
-.screen #output {
-    font-size: 24px;
-    float: right;
-}
-
-.screen #output .operator {
-    color: blue;
-  }
 
 .buttons {
     display: grid;
@@ -49,18 +46,17 @@ button {
 }
 
 .operator {
-    color: #fff;
+    color: #000000;
     background: linear-gradient(to bottom left, #1ecefa 20%, #757070 100%);
 }
 
-
-
 .equals {
-    color: #fff;
+    color: #000000;
     background: linear-gradient(to top right, #6bd2ff, #0077c2);
     grid-row: span 2;
     width: 70px;
     height: 145px;
+    box-shadow: 0 0 2px 2px rgba(0, 119, 194, 0.5);
 }
 
 .zero {
@@ -80,7 +76,7 @@ button {
 
 
 .clear {
-    color: #fff;
+    color: #000000;
     background-color: #838282;
     ;
 }
@@ -91,6 +87,7 @@ button:hover {
 }
 
 #answer {
-    font-size: 20px;
-    color: green;
-  }
+    font-size: 40px;
+    color: rgb(180, 180, 180);
+    /* float: right; */
+}
