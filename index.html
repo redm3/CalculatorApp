@@ -2,79 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
-  <style>
-    .calculator {
-      width: 300px;
-      margin: 0 auto;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-    }
-
-    .screen {
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 5px;
-      margin-bottom: 10px;
-    }
-
-    .screen #output {
-      font-size: 24px;
-    }
-
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-    }
-
-    button {
-      width: 100%;
-      height: 50px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 24px;
-    }
-
-    .number {
-      color: #333;
-    }
-
-    .operator {
-      color: #fff;
-      background-color: #f00;
-    }
-
-    .equals {
-      color: #fff;
-      background-color: #00f;
-      grid-row: span 2;
-    }
-
-    .clear {
-      color: #fff;
-      background-color: #ccc;
-    }
-
-    button:hover {
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
     <div class="calculator">
         <div class="screen">
             <span id="output">0</span>
         </div>
         <div class="buttons">
-            <button class="clear" onclick="clearOutput()">AC</button>
+            <button class="clear" onclick="clearOutput()">Ac</button>
             <button class="operator" onclick="backspace()">&larr;</button>
             <button class="operator" onclick="addToOutput('/')">÷</button>
             <button class="operator" onclick="addToOutput('*')">x</button>
@@ -90,29 +32,11 @@
             <button class="number" onclick="addToOutput('2')">2</button>
             <button class="number" onclick="addToOutput('3')">3</button>
             <button class="equals" onclick="calculate()">=</button>
-            <button class="number" onclick="addToOutput('0')">0</button>
+            <button class="zero" onclick="addToOutput('0')">0</button>
             <button class="number" onclick="addToOutput('.')">.</button>
         </div>
     </div>
 </body>
-<script>
-    let output = '0';
 
-    function addToOutput(value) {
-        if (output === '0') {
-            output = value;
-        } else {
-            output += value;
-        }
-        document.getElementById('output').textContent = output;
-    }
-
-    function clearOutput() {
-        output = '0';
-        document.getElementById('output').textContent = output;
-    }
-
-    /* function calculate() { */
-</script>
 
 </html>
